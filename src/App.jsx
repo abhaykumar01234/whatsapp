@@ -1,6 +1,8 @@
 import React from "react";
+import { ChatBox } from "./components/ChatBox";
 import { ChatList } from "./components/ChatList";
 import { LeftHeader } from "./components/LeftHeader";
+import { RightHeader } from "./components/RightHeader";
 import { Search } from "./components/Search";
 
 const App = () => {
@@ -12,7 +14,10 @@ const App = () => {
           <Search />
           <ChatList />
         </section>
-        <section className="rightSide">Right</section>
+        <section className="rightSide">
+          <RightHeader />
+          <ChatBox />
+        </section>
       </div>
     </div>
   );
