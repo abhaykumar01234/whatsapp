@@ -1,0 +1,24 @@
+.header {
+  height: 60px;
+  background: #ededed;
+  padding-inline: 15px;
+}
+
+.userimg {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.nav_icons {
+  display: flex;
+  list-style-type: none;
+
+  li {
+    cursor: pointer;
+    color: #51585c;
+    font-size: 1.5em;
+    margin-left: 22px;
+  }
+}
