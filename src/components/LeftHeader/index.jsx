@@ -1,5 +1,12 @@
 import cx from "classnames";
 import s from "./lheader.module.scss";
+import {
+  Root,
+  Trigger,
+  Portal,
+  Content,
+  Item,
+} from "@radix-ui/react-dropdown-menu";
 
 export const LeftHeader = () => {
   return (
@@ -13,7 +20,20 @@ export const LeftHeader = () => {
           <ion-icon name="chatbox" />
         </li>
         <li>
-          <ion-icon name="ellipsis-vertical" />
+          <Root>
+            <Trigger asChild>
+              <ion-icon name="ellipsis-vertical" />
+            </Trigger>
+
+            <Portal>
+              <Content align="end" sideOffset={8} className={s.dropdown}>
+                <Item>New Group</Item>
+                <Item>Starred Messages</Item>
+                <Item>Settings</Item>
+                <Item>Logout</Item>
+              </Content>
+            </Portal>
+          </Root>
         </li>
       </ul>
     </div>

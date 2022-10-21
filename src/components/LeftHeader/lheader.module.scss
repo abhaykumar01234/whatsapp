@@ -1,5 +1,7 @@
+@import "../../styles/vars";
+
 .header {
-  height: 60px;
+  height: $headerHeight;
   background: #ededed;
   padding-inline: 15px;
 }
@@ -9,6 +11,26 @@
   height: 40px;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.dropdown {
+  background: #ededed;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(#000, 0.2);
+
+  [role="menuitem"] {
+    padding: 0.75rem 1rem;
+    min-width: 150px;
+    outline: none;
+    font-size: 14px;
+
+    &[data-highlighted],
+    &:hover {
+      background: #cecece;
+      cursor: pointer;
+    }
+  }
 }
 
 .nav_icons {
