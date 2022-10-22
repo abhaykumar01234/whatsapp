@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Block } from "./Block";
-import { chats } from "../../config";
 import s from "./block.module.scss";
+import { GlobalContext } from "../../context";
 
 export const ChatList = () => {
-  const [activeBlock, setActiveBlock] = useState(chats[0].id);
+  const { chats, activeChat, setActiveChat } = useContext(GlobalContext);
 
   return (
     <div className={s.chatlist}>
@@ -12,8 +12,8 @@ export const ChatList = () => {
         <Block
           key={chat.id}
           chat={chat}
-          isActive={chat.id === activeBlock}
-          setActiveBlock={setActiveBlock}
+          isActive={chat.id === activeChat.id}
+          onClick={() => setActiveChat(chat)}
         />
       ))}
     </div>

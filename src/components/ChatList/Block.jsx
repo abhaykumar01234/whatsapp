@@ -2,9 +2,9 @@ import cx from "classnames";
 import s from "./block.module.scss";
 
 export const Block = ({
-  chat: { id, name, imgUrl, dateTime, lastMsg, unreadMsgCount },
+  chat: { name, imgUrl, dateTime, lastMsg, unreadMsgCount },
   isActive,
-  setActiveBlock,
+  onClick,
 }) => {
   return (
     <div
@@ -12,7 +12,7 @@ export const Block = ({
         [s.active]: isActive,
         [s.unread]: unreadMsgCount > 0,
       })}
-      onClick={() => setActiveBlock(id)}
+      onClick={onClick}
     >
       <img src={imgUrl} alt={name} className={s.userImg} />
       <div className={s.details}>

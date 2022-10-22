@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import cx from "classnames";
 import r from "./rheader.module.scss";
 import l from "../LeftHeader/lheader.module.scss";
+import { GlobalContext } from "../../context";
 
 export const RightHeader = () => {
+  const { activeChat } = useContext(GlobalContext);
   return (
     <div className={cx(l.header, "between")}>
       <div className="center">
-        <img src="/images/img1.jpg" alt="user" className={l.userimg} />
+        <img src={activeChat.imgUrl} alt="user" className={l.userimg} />
         <h4 className={r.imgText}>
-          Abhay Kumar <br />
+          {activeChat.name} <br />
           <span>online</span>
         </h4>
       </div>
