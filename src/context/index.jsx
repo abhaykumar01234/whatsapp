@@ -31,14 +31,15 @@ export const GlobalProvider = ({ children }) => {
     const minutes = String(_d.getMinutes()).padStart(2, "0");
     const time = `${hours}:${minutes}`;
 
+    const newId =
+      activeChat.messages.length === 0
+        ? 1
+        : activeChat.messages.slice(-1)[0].id + 1;
     const newMsg = {
-      id:
-        activeChat.messages.length === 0
-          ? 1
-          : activeChat.messages.slice(-1)[0].id + 1,
+      id: newId,
       msg,
       time,
-      inMsg: true,
+      inMsg: newId % 2 === 1,
     };
 
     setActiveChat((ac) => ({ ...ac, messages: [...ac.messages, newMsg] }));
